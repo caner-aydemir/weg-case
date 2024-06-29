@@ -7,7 +7,7 @@ export const EmployeeProvider = ({
   children,
 }: Readonly<{ children: React.ReactNode }>) => {
   const [employees, setEmployees] = React.useState("1");
-  const [employeeDetails, setEmployeeDetails] = React.useState([]);
+  const [employeeDetails, setEmployeeDetails] = React.useState([]); 
   const [users, setUsers] = useState([]);
   const Request = async () => {
     try {
