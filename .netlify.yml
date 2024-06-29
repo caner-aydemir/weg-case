@@ -1,0 +1,3 @@
+build:
+  image: weg-case
+  command: docker-compose up --build
