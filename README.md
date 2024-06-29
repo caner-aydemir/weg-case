@@ -1,7 +1,6 @@
 
+## Projeyi Dockerize ettim ve projeyi çalıştırmak için `docker-compose up --build` komutunu çalıştırınız
 
-### Aşağıdaki linkten projeyi test edebilirsiniz.
-[Proje Linki](caneraydemir.xyz)
 
 ### Hatırlatma 
 GRAPHQ-FAKER API'sinden gelen dataların içinde çalışan fotoğrafları bozuk veya hatalı geliyor. Bu sebeple tüm çalışan fotoğraflarını tek bir image yaptım.
@@ -29,7 +28,7 @@ Kullanıcı adı : admin , Şifre : admin123
 
   Kullanıcı Adı : admin <br/> Şifre : admin123
 
-2. Authenticasyon
+2. Authentication
 
 Vercel API kullanılarak JWT tokenlı bir authentication yapılmıştır. Doğru giriş bilgileriyle dashboarda erişebilirsiniz.
 
