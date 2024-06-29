@@ -9,7 +9,7 @@ export const EmployeeProvider = ({
   const [employees, setEmployees] = React.useState("1");
   const [employeeDetails, setEmployeeDetails] = React.useState([]);
   const [users, setUsers] = useState([]);
-  const Request = async () => {
+  const Request = async () => { 
     try {
       const res = await fetch("/api/getData", {
         method: "POST",
