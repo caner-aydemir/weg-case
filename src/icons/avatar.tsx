@@ -6,7 +6,7 @@ interface AvatarWithIconProps {
 }
 
 const AvatarWithIcon = ({ username }: AvatarWithIconProps) => (
-  <div className="flex justify-center text-green-500 items-center ">
+  <div className="flex justify-center  items-center ">
     <Avatar
       size="sm"
       icon={<AvatarIcon />}
@@ -15,7 +15,7 @@ const AvatarWithIcon = ({ username }: AvatarWithIconProps) => (
         icon: "text-green-500",
       }}
     />
-    <span>{username}</span>
+    <span className="text-white">{username}</span>
   </div>
 );
 

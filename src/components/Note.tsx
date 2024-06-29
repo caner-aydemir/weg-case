@@ -5,6 +5,7 @@ import Image from "next/image"
 import {Button} from "@nextui-org/react";
 
 function Note() {
+
     const [hiddenBar, setHiddenBar] = useState(false);
     return (
         <div className={"flex xs:w-screen xs:my-12 xs:px-3  flex-col items-center gap-y-10 justify-center w-full h-auto py-7"}>

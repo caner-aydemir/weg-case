@@ -36,8 +36,8 @@ function Login() {
   const handleSubmit = async (event: any) => {
     console.log(
       "Bu fonksiyonumda kullanıcıdan aldığım user ve password değerlerini api/login apime POST request olarak atıyorum" +
-        "eğer username ve password değeri vercelde olumlu dönerse JWT tokenimi alıyorum ve authentication işlemimi gerçekleştiriyorum" +
-        "login olmayan kullanıclar dashboarda erişemez. Middleware da güvenlik önlemlerini alıyorum."
+      "eğer username ve password değeri vercelde olumlu dönerse JWT tokenimi alıyorum ve authentication işlemimi gerçekleştiriyorum" +
+      "login olmayan kullanıclar dashboarda erişemez. Middleware da güvenlik önlemlerini alıyorum."
     );
     event.preventDefault();
     setGoDashboard(true);
@@ -103,7 +103,7 @@ function Login() {
             variant={"underlined"}
             color={"success"}
             type="text"
-            label={<AvatarWithIcon username={""} />}
+            label={<AvatarWithIcon username={"username"} />}
           />
           <Input
             label={passwordContent}

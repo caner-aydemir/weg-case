@@ -28,8 +28,6 @@ export default function RootLayout({
             </EmployeeProvider>
         </NextUIProvider>
         </body>
-
-
         </html>
     );
 }

@@ -7,7 +7,7 @@ export const EmployeeProvider = ({
   children,
 }: Readonly<{ children: React.ReactNode }>) => {
   const [employees, setEmployees] = React.useState("1");
-  const [employeeDetails, setEmployeeDetails] = React.useState([]); 
+  const [employeeDetails, setEmployeeDetails] = React.useState([]);
   const [users, setUsers] = useState([]);
   const Request = async () => {
     try {
@@ -18,11 +18,13 @@ export const EmployeeProvider = ({
       dataInfo.sort((a: any, b: any) => b.vote - a.vote);
 
       await setUsers(dataInfo);
-    } catch (error) {}
+    } catch (error) { }
   };
+
   useEffect(() => {
     Request();
   }, []);
+
 
   return (
     <EmployeeContext.Provider
