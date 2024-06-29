@@ -1,0 +1,23 @@
+type Employee {
+  id: ID
+  firstName: String @fake(type: firstName, locale: en_CA)
+  lastName: String @fake(type: lastName, locale: en_CA)
+  email: String @fake(type: email)
+  image: String
+    @fake(type: avatarUrl, options: { imageSize: { width: 200, height: 200 } })
+  phone: String @fake(type: phoneNumber)
+  address: String @fake(type: streetAddress, options: { useFullAddress: true })
+  salary: Float
+    @fake(type: number, options: { minMoney: 20000, maxMoney: 100000000 })
+  hireDate: String
+    @fake(type: date, options: { dateTo: "2020-12-31", dateFrom: "2010-01-01" })
+  department: String @fake(type: word)
+  jobTitle: String @fake(type: jobTitle)
+  vote: Int @fake(type: number, options: { minNumber: 40, maxNumber: 55 })
+  userID: Int @fake(type: number, options: { minNumber: 1, maxNumber: 100 })
+}
+
+type Query {
+  employee(id: ID): Employee
+  employees:[Employee]
+}

@@ -1,0 +1,22 @@
+version: '3'
+
+services:
+  frontend:
+    container_name: wegCase
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "3000:3000"
+    volumes:
+      - .:/usr/src/app
+      - /node_modules
+
+  graphql-faker:
+    container_name: graphql-Faker
+    image: apisguru/graphql-faker
+    ports:
+      - "9002:9002"
+    volumes:
+      - ./src/schema:/schema
+    command: /schema/schema.faker.graphql
