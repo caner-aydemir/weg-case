@@ -20,3 +20,18 @@ services:
     volumes:
       - ./src/schema:/schema
     command: /schema/schema.faker.graphql
+
+  # NGINX SERVICE #
+  nginx:
+    container_name: nginx
+    image: nginx:latest
+    ports:
+      - "8080:80"
+    deploy:
+      resources:
+        limits:
+          cpus: '2.0'
+          memory: '2G'
+    volumes:
+      - ./configs/nginx/default.conf:/etc/nginx/conf.d/default.conf
+      - ./:/var/www

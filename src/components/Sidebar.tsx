@@ -33,51 +33,47 @@ function Sidebar() {
   const [openLogoutModal, setOpenLogoutModal] = useState(false);
   return (
     <>
-      {
-        window?.matchMedia("(max-width: 897px)").matches ? (
-          <MobileNavbar />
-        ) : (
+
+      <div
+        className={`${!token && "hidden"
+          } xs:hidden w-24  border-r-2 h-screen border-[#E6E8EB]`}
+      >
+        <div className={`  w-full h-full flex justify-center py-10`}>
           <div
-            className={`${!token && "hidden"
-              } xs:hidden w-24  border-r-2 h-screen border-[#E6E8EB]`}
+            className={
+              "w-1/2 gap-y-5 text-2xl text-gray-500 items-center flex flex-col "
+            }
           >
-            <div className={`  w-full h-full flex justify-center py-10`}>
-              <div
-                className={
-                  "w-1/2 gap-y-5 text-2xl text-gray-500 items-center flex flex-col "
+            {sidebarItems.map((items, index) => (
+              <Button
+                isIconOnly
+                key={index}
+                disableRipple={true}
+                onPress={() =>
+                  items.name === "logout"
+                    ? setOpenLogoutModal(!openLogoutModal)
+                    : items.href !== null && goRoute(index, items.href)
                 }
+                size={"lg"}
+                variant={pathname === items.href ? "solid" : "light"}
+                className={`${pathname === items.href ? "bg-blue-100" : ""}`}
               >
-                {sidebarItems.map((items, index) => (
-                  <Button
-                    isIconOnly
-                    key={index}
-                    disableRipple={true}
-                    onPress={() =>
-                      items.name === "logout"
-                        ? setOpenLogoutModal(!openLogoutModal)
-                        : items.href !== null && goRoute(index, items.href)
-                    }
-                    size={"lg"}
-                    variant={pathname === items.href ? "solid" : "light"}
-                    className={`${pathname === items.href ? "bg-blue-100" : ""}`}
-                  >
-                    <items.icons
-                      size={25}
-                      className={` ${pathname === items.href
-                        ? "text-blue-600 "
-                        : "text-gray-500"
-                        }`}
-                    />
-                  </Button>
-                ))}
-              </div>
-              <SignOutModal
-                show={openLogoutModal}
-                close={() => setOpenLogoutModal(!openLogoutModal)}
-              />
-            </div>
+                <items.icons
+                  size={25}
+                  className={` ${pathname === items.href
+                    ? "text-blue-600 "
+                    : "text-gray-500"
+                    }`}
+                />
+              </Button>
+            ))}
           </div>
-        )}
+          <SignOutModal
+            show={openLogoutModal}
+            close={() => setOpenLogoutModal(!openLogoutModal)}
+          />
+        </div>
+      </div>
     </>
   );
 }
