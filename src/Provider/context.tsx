@@ -2,7 +2,7 @@
 
 import React, {createContext, useState, useEffect} from 'react';
 
-export const EmployeeContext = createContext()
+export const EmployeeContext = createContext({})
 export const EmployeeProvider = ({
                                      children,
                                  }: Readonly<{ children: React.ReactNode }>) => {
