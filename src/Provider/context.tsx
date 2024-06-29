@@ -15,7 +15,7 @@ export const EmployeeProvider = ({
                 method: "POST",
             });
             const dataInfo = await res.json();
-            dataInfo.sort((a, b) => b.vote - a.vote);
+            dataInfo.sort((a:any, b:any) => b.vote - a.vote);
 
             await setUsers(dataInfo)
         } catch (error) {
