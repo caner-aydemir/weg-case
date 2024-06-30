@@ -1,5 +1,5 @@
 
-## Projeyi Dockerize ettim ve projeyi çalıştırmak için `docker-compose up --build` komutunu çalıştırınız
+### Projeyi Dockerize ettim ve projeyi çalıştırmak için `docker-compose up --build` komutunu çalıştırınız
 
 
 ### Hatırlatma 
